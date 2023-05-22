@@ -1,5 +1,6 @@
 {
     "conventionalCommits.scopes": [
-        "Individual Deploy"
+        "Individual Deploy",
+        "EventBridge Scheduler"
     ]
 }

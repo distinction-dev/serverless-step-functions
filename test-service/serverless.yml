@@ -57,6 +57,10 @@ stepFunctions:
     StepMachineOne:
       name: StepMachineOne
       id: StepMachineOne
+      events:
+        - schedule:
+            rate: cron(10 * * * ? *)
+            enabled: true
       definition:
         StartAt: Function1
         Comment: 'Yo DDev Rocks'
@@ -65,7 +69,7 @@ stepFunctions:
             Type: Task
             Parameters:
               AWS_STEP_FUNCTIONS_STARTED_BY_EXECUTION_NAME.$: $$.Execution.Name
-              AWS_STEP_FUNCTIONS_STARTED.$: $$.Execution.Name
+              AWS_.$: $$.Execution.Name
             Resource:
               Fn::GetAtt: [dummy, Arn]
             Retry:

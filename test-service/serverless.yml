@@ -59,6 +59,7 @@ stepFunctions:
       id: StepMachineOne
       events:
         - schedule:
+            method: scheduler
             rate: cron(10 * * * ? *)
             enabled: true
       definition:
